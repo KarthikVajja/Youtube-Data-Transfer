@@ -1,6 +1,8 @@
 from lib2to3.pgen2 import driver
 import undetected_chromedriver as uc
 import time
+import pandas
+import numpy as np
 
 driver = uc.Chrome(executable_path='<path to your driver>')
 
@@ -29,3 +31,15 @@ try:
 except:
     print('Login Failed')
 
+df = pandas.read_csv('~/Desktop/takeout-20220114T162156Z-001/Takeout/YouTube and YouTube Music/subscriptions/subscriptions.csv')
+subs = np.array(df['Channel URL'])
+print(subs)
+
+for i in subs:
+    driver.get(i)
+    sub_button = driver.find_element_by_xpath('//*[@id="subscribe-button"]')
+    sub_button.click()
+    pref_button = driver.find_element_by_xpath('//*[@id="notification-preference-button"]')
+    pref_button.click()
+    all_pref = driver.find_element_by_xpath('//*[@id="items"]/ytd-menu-service-item-renderer[1]/tp-yt-paper-item/yt-formatted-string')
+    all_pref.click()
