@@ -45,3 +45,15 @@ for i in subs:
     all_pref.click()
 
 # In case of unstable internet connection
+# for i in range(len(subs)):
+#     try:
+#         driver.get(subs[i])
+#         sub_button = driver.find_element_by_xpath('//*[@id="subscribe-button"]')
+#         sub_button.click()
+#         pref_button = driver.find_element_by_xpath('//*[@id="notification-preference-button"]')
+#         pref_button.click()
+#         all_pref = driver.find_element_by_xpath('//*[@id="items"]/ytd-menu-service-item-renderer[1]/tp-yt-paper-item/yt-formatted-string')
+#         all_pref.click()
+#     except:
+#         print("Failed to subscribe to: " + subs[i] + "\nAttempting again.....")
+#         i-=1
