@@ -31,7 +31,7 @@ try:
 except:
     print('Login Failed')
 
-df = pandas.read_csv('~/Desktop/takeout-20220114T162156Z-001/Takeout/YouTube and YouTube Music/subscriptions/subscriptions.csv')
+df = pandas.read_csv('<path to your csv file>')
 subs = np.array(df['Channel URL'])
 print(subs)
 
