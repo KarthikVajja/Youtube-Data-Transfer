@@ -43,3 +43,5 @@ for i in subs:
     pref_button.click()
     all_pref = driver.find_element_by_xpath('//*[@id="items"]/ytd-menu-service-item-renderer[1]/tp-yt-paper-item/yt-formatted-string')
     all_pref.click()
+
+# In case of unstable internet connection
